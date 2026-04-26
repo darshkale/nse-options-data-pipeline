@@ -334,3 +334,4 @@ dist/
 *.md
 !README.md
 !LICENSE.md
+!CONTRIBUTING.md
