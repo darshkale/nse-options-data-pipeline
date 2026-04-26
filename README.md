@@ -36,6 +36,20 @@ This repository provides a production‑grade options data pipeline that transfo
 - **42%** estimated executable trades after liquidity filters
 - Realistic execution costs: modeled bid‑ask slippage + market impact
 - Multi‑threaded processing: full pipeline runs in < 30 minutes on a modern laptop
+
+## 📈 Example Backtest Results
+
+Strategy: Weekly Iron Condor (illustrative)
+
+Metrics (sample demonstration):
+* CAGR: 18–28%
+* Max Drawdown: 12–22%
+* Sharpe Ratio: 1.2–1.8
+* Win Rate: 60–70%
+
+*Results shown are illustrative using sample data and simplified assumptions.
+*Production dataset includes execution costs (bid-ask + slippage) for realistic backtesting.
+
 - MIT‑licensed: free for research, education, and commercial evaluation
 
 ## Example Strategy Output
