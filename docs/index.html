@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSE Options Data Pipeline - Clean NIFTY Options Data for Backtesting & Trading</title>
+    <meta name="description" content="Access 5+ years of cleaned NIFTY options data with IV, Greeks, execution modeling, and strategy-ready filters. Ideal for quantitative research, algo trading, and education.">
+    <meta name="keywords" content="NIFTY options data, quantitative finance, algo trading, backtesting, IV, Greeks, NSE data, Python, CSV, API">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/darshkale/nse-options-data-pipeline">
+    <meta property="og:title" content="NSE Options Data Pipeline - Clean NIFTY Options Data">
+    <meta property="og:description" content="Access 5+ years of cleaned NIFTY options data with IV, Greeks, execution modeling, and strategy-ready filters. Ideal for quantitative research, algo trading, and education.">
+    <meta property="og:image" content="https://github.com/darshkale/nse-options-data-pipeline/raw/main/docs/pnl_example.png">
+    <meta property="og:site_name" content="GitHub">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/darshkale/nse-options-data-pipeline">
+    <meta property="twitter:title" content="NSE Options Data Pipeline - Clean NIFTY Options Data">
+    <meta property="twitter:description" content="Access 5+ years of cleaned NIFTY options data with IV, Greeks, execution modeling, and strategy-ready filters. Ideal for quantitative research, algo trading, and education.">
+    <meta property="twitter:image" content="https://github.com/darshkale/nse-options-data-pipeline/raw/main/docs/pnl_example.png">
+    <!-- JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NSE Options Data Pipeline",
+      "description": "A Python pipeline that processes raw NSE options data into clean, analysis-ready datasets with IV, Greeks, execution costs, and tradability filters.",
+      "url": "https://github.com/darshkale/nse-options-data-pipeline",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Darsh Kale"
+      },
+      "license": "MIT",
+      "programmingLanguage": ["Python"]
+    }
+    </script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        .highlight { background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db; margin: 20px 0; }
+        .footer { margin-top: 40px; text-align: center; color: #7f8c8d; font-size: 0.9em; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NSE Options Data Pipeline</h1>
+        <p>Clean, analysis-ready NIFTY options data for quantitative research and algo trading.</p>
+    </header>
+
+    <section>
+        <h2>What This Repository Provides</h2>
+        <ul>
+            <li><strong>5+ years</strong> of cleaned NIFTY options data (sample included)</li>
+            <li>Implied Volatility (IV) and Greeks (delta, gamma, theta, vega, rho) for every contract</li>
+            <li>Execution cost modeling (bid-ask spread + slippage) for realistic backtesting</li>
+            <li>Tradability filters (liquidity, open interest, volume) to isolate executable trades</li>
+            <li>Fast query API (FastAPI starter) for strategy development</li>
+            <li>Example strategies (Iron Condor) and notebooks for quick start</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why Use This Dataset?</h2>
+        <div class="highlight">
+            <p>Raw NSE data lacks IV, Greeks, and realistic execution costs. Building this pipeline yourself requires:</p>
+            <ul>
+                <li>Multi-source data ingestion (NSE, Yahoo Finance, interest rates)</li>
+                <li>Complex numerical methods for IV and Greeks calculation</li>
+                <li>Execution modeling calibrated to market impact</li>
+                <li>Data cleaning and validation at scale</li>
+            </ul>
+            <p>This repository gives you a reference implementation, while production-grade data and API access are available on request.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Quick Start</h2>
+        <pre><code># Clone the repository
+git clone https://github.com/darshkale/nse-options-data-pipeline.git
+cd nse-options-data-pipeline
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the strategy demo (see results in under 1 minute)
+python examples/run_strategy.py
+
+# Explore the demo notebook
+jupyter notebook notebooks/demo_iron_condor.ipynb
+</code></pre>
+    </section>
+
+    <section>
+        <h2>Get Full Access</h2>
+        <p>Unlock the complete 5+ year dataset, API access, and premium features:</p>
+        <ul>
+            <li>Full historical data (5+ years clean NIFTY options)</li>
+            <li>IV + Greeks with 100% coverage</li>
+            <li>Execution modeling (bid-ask + slippage)</li>
+            <li>Strategy-ready data with tradability filters</li>
+            <li>Fast API for low-latency queries</li>
+        </ul>
+        <p>📩 Email: <a href="mailto:yogesh@afi.edu.in">yogesh@afi.edu.in</a><br>
+           Subject: "NIFTY Options Data Access"</p>
+    </section>
+
+    <section>
+        <h2>Example Performance (Illustrative)</h2>
+        <img src="pnl_example.png" alt="PnL Distribution Example" style="max-width:100%; height:auto; border-radius:8px; margin:15px 0;">
+        <p><em>Figure: Sample PnL distribution from an iron condor strategy backtest.</em></p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Darsh Kale. Licensed under <a href="https://github.com/darshkale/nse-options-data-pipeline/raw/main/LICENSE" target="_blank">MIT License</a>.</p>
+        <p>Built with ❤️ for the quant community.</p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+</body>
+</html>
