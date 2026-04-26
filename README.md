@@ -79,6 +79,7 @@ See `notebooks/demo_iron_condor.ipynb` for a complete end‑to‑end example:
 - Plots equity curve and Greeks exposure
 
 > ⚠️ **Note:** The demo uses the synthetic `sample_data.csv` for illustration only.  
+![PnL Distribution](assets/pnl_distribution.png)
 > The full 5‑year cleaned dataset is required to reproduce the strategy output above.  
 > Full dataset and API access are available on request.
 
