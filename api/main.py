@@ -32,10 +32,17 @@ async def root():
     }
 
 @app.get("/chain")
-async def get_option_chain(date: Optional[str] = None):
+async def get_option_chain(
+    date: Optional[str] = None,
+    strike: Optional[int] = None,
+    option_type: Optional[str] = None
+):
     """
-    Get option chain for a specific date (YYYY-MM-DD format).
-    If no date is provided, returns the most recent available data.
+    Get option chain with optional filters.
+    - date: YYYY-MM-DD format (filters by timestamp date)
+    - strike: exact strike price to filter (integer)
+    - option_type: 'CE' for call, 'PE' for put
+    If no filters provided, returns all available data (or most recent if date not given).
     """
     try:
         df = load_data()
@@ -54,8 +61,24 @@ async def get_option_chain(date: Optional[str] = None):
         except Exception:
             raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD")
     
+    # Filter by strike if provided
+    if strike is not None:
+        if 'strike' not in df.columns:
+            raise HTTPException(status_code=400, detail="Strike column not available in data")
+        df = df[df['strike'] == strike]
+    
+    # Filter by option_type if provided
+    if option_type is not None:
+        if 'option_type' not in df.columns:
+            raise HTTPException(status_code=400, detail="Option_type column not available in data")
+        # Normalize to uppercase
+        option_type = option_type.upper()
+        if option_type not in ['CE', 'PE']:
+            raise HTTPException(status_code=400, detail="Option_type must be 'CE' or 'PE'")
+        df = df[df['option_type'] == option_type]
+    
     if df.empty:
-        raise HTTPException(status_code=404, detail="No data found for the specified date")
+        raise HTTPException(status_code=404, detail="No data found for the given filters")
     
     # Convert DataFrame to list of dictionaries for JSON response
     # Handle datetime objects
@@ -67,6 +90,11 @@ async def get_option_chain(date: Optional[str] = None):
     
     return {
         "count": len(records),
+        "filters": {
+            "date": date,
+            "strike": strike,
+            "option_type": option_type
+        },
         "data": records
     }
 
