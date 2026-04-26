@@ -134,6 +134,9 @@ Subject: "NIFTY Options Data Access"
 
 ## Disclaimer (MANDATORY)
 > **No proprietary NSE data is distributed** in this repository. The code is designed to process data that users obtain **legally** from the National Stock Exchange of India (NSE) or authorized vendors, in full compliance with NSE’s Terms of Use and any applicable SEBI regulations.  
+
+> This repository contains a simplified reference implementation.
+> Production-grade models and datasets are not included.
 > This tool is provided for **educational and research purposes only**. The authors are not responsible for any misuse, violation of terms, or financial losses resulting from the use of this software. Users must independently verify data accuracy and suitability for their intended purpose.
 
 ---
