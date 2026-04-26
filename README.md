@@ -56,7 +56,7 @@ nse-options-data-scraper/
 
 1. **Clone the repository** (after creating your own repo from this template):
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/darshkale/nse-options-data-pipeline.git
    cd nse-options-data-scraper
    ```
 
