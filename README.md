@@ -62,6 +62,18 @@ Metrics (sample demonstration):
 
 *These figures are based on a backtest using the full dataset (available on request) and include realistic execution costs. Past performance is not indicative of future results.*
 
+## ⚠ Why Not Build This Yourself?
+
+Building this pipeline requires:
+
+* multi-source data ingestion (NSE, Yahoo, rates)
+* IV & Greeks computation (non-trivial numerical methods)
+* execution modeling (bid-ask + slippage calibration)
+* data cleaning & validation at scale
+
+This repository provides a reference implementation,
+while production-grade datasets and APIs are available separately.
+
 ## What You Can Build
 With this dataset you can develop and test:
 - **Income strategies**: Iron Condors, Credit Spreads, Calendar Spreads
