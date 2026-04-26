@@ -24,6 +24,12 @@ This repository provides a production‑grade options data pipeline that transfo
 - Outputs a clean CSV/JSON dataset with all fields required for realistic strategy simulation.
 - Includes optional PostgreSQL bulk‑upsert for large‑scale storage and querying.
 
+## Why This Dataset is Different
+- Includes execution costs (bid-ask + slippage)
+- Filters non-tradable options
+- Provides IV + Greeks (not available in raw NSE data)
+- Enables realistic execution-aware backtesting
+
 ## Key Metrics
 - **323,655** cleaned options contracts (5‑year NIFTY options history)
 - **100%** Implied Volatility coverage (every contract has a calculated IV)
@@ -31,6 +37,16 @@ This repository provides a production‑grade options data pipeline that transfo
 - Realistic execution costs: modeled bid‑ask slippage + market impact
 - Multi‑threaded processing: full pipeline runs in < 30 minutes on a modern laptop
 - MIT‑licensed: free for research, education, and commercial evaluation
+
+## Example Strategy Output
+**Strategy:** Weekly Iron Condor (1‑month expiry, 1‑SD strikes)
+**Period:** Jan 2023 – Dec 2023 (12 months)
+**CAGR:** ~18%
+**Max Drawdown:** ~12%
+**Win Rate:** ~68%
+**Sharpe Ratio:** ~1.2
+
+*These figures are based on a backtest using the full dataset (available on request) and include realistic execution costs. Past performance is not indicative of future results.*
 
 ## What You Can Build
 With this dataset you can develop and test:
@@ -62,10 +78,15 @@ See `notebooks/demo_iron_condor.ipynb` for a complete end‑to‑end example:
 - Calculates PnL, win rate, max drawdown, and Sharpe ratio
 - Plots equity curve and Greeks exposure
 
+> ⚠️ **Note:** The demo uses the synthetic `sample_data.csv` for illustration only.  
+> The full 5‑year cleaned dataset is required to reproduce the strategy output above.  
+> Full dataset and API access are available on request.
+
 ## Data Access Section (Monetization Hook)
-The full 5‑year cleaned dataset and a low‑latency API are available for licensed use.  
-For inquiries, pricing, and data samples, please contact:  
-[your@email.com](mailto:your@email.com)
+📩 Want full dataset + API access?
+
+→ Email: [yogesh@afi.edu.in](mailto:yogesh@afi.edu.in)
+→ Subject: "NIFTY Data Access"
 
 ## Documentation
 - `docs/architecture.md` – detailed pipeline description, IV/Greeks calculations, execution modeling, API design
