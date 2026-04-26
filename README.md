@@ -83,6 +83,11 @@ With this dataset you can develop and test:
 - **Execution algorithms**: smart order routing, liquidity‑slicing, post‑trade analysis
 
 ## Quick Start
+
+To see results in under 1 minute:
+
+python examples/run_strategy.py
+
 ```bash
 # Clone the repo
 git clone https://github.com/darshkale/nse-options-data-pipeline.git
