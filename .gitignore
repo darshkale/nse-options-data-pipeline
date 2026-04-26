@@ -1,0 +1,336 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybrtarget/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyderproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Data / backup
+*.sqlite3
+*.csv
+*.json
+*.xlsx
+*.xls
+*.pkl
+*.h5
+*.feather
+*.parquet
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NSE specific data (do not commit)
+nse-options-last-5-years/
+output/
+quality_reports/
+processed_data/
+earning_dates/
+interest_rates/
+yahoo_finance/
+bhavcopy/
+backtest/
+collectors/
+dashboard/
+interactive_view/
+store_in_db/
+scripts/
+nse_fno_scripts.json
+top_nse_fno_scripts.json
+nse_options_formulae.pdf
+
+# Exclude the above directories but keep the structure? Actually we want to ignore them entirely.
+# However, we might want to keep the empty directories for clarity? Usually we ignore them.
+# We'll keep the ignore patterns above.
+
+# But note: we want to keep the code in scripts/, store_in_db/, etc. So we should not ignore those directories.
+# Wait, the above lines ignore the directories entirely. That's not correct because we want to keep the scripts.
+# Let's revise: we want to ignore the data files, not the code.
+
+# Actually, the project structure includes:
+# - scripts/ (code)
+# - store_in_db/ (code)
+# - bhavcopy/ (data)
+# - earning_dates/ (data)
+# - interest_rates/ (data)
+# - yahoo_finance/ (data)
+# - processed_data/ (data)
+# - interactive_view/ (maybe code? but likely data)
+# - backtest/ (maybe code)
+# - collectors/ (maybe code)
+# - dashboard/ (maybe code)
+# - nse_fno_scripts.json (data)
+# - top_nse_fno_scripts.json (data)
+# - nse_options_formulae.pdf (data)
+
+# So we need to ignore the data directories and files, but keep the code directories.
+
+# Let's define a better .gitignore:
+
+# Data directories
+/bhavcopy/
+/earning_dates/
+/interest_rates/
+/yahoo_finance/
+/processed_data/
+/quality_reports/
+/output/
+/nse-options-last-5-years/
+
+# Data files
+/*.json
+/*.csv
+/*.pdf
+/*.pkl
+/*.sqlite3
+/*.h5
+/*.feather
+/*.parquet
+/*.xlsx
+/*.xls
+
+# But we want to keep certain JSON files that are code/config? For example, nse_fno_scripts.json might be code? Actually it's data (list of scripts). We'll ignore it.
+# However, we might want to keep the schema.sql? Let's see.
+
+# We'll be more specific: ignore the data directories entirely, and ignore specific file types in the root.
+
+# However, note that the user might have code in the root (like process_data.py). We want to keep .py files.
+
+# So let's ignore:
+# - /bhavcopy/
+# - /earning_dates/
+# - /interest_rates/
+# - /yahoo_finance/
+# - /processed_data/
+# - /quality_reports/
+# - /output/
+# - /nse-options-last-5-years/
+# - /store_in_db/   ??? Actually store_in_db contains code (store_s.py, db_util.py) and maybe schema.sql. We should keep the code but ignore any data? The directory likely only contains code. Let's not ignore the whole directory.
+# - /scripts/       similarly contains code.
+
+# So we will ignore the data directories, but not the code directories.
+
+# Let's list the data directories from the README:
+# bhavcopy/
+# earning_dates/
+# interest_rates/
+# yahoo_finance/
+# processed_data/
+# store_in_db/   (maybe code, but also might have data? The README says it's for bulk ETL into Postgres, so likely code)
+# interactive_view/ (maybe code)
+# scripts/       (code)
+# backtest/      (maybe code)
+# collectors/    (maybe code)
+# dashboard/     (maybe code)
+# nse_fno_scripts.json (data)
+# top_nse_fno_scripts.json (data)
+# nse_options_formulae.pdf (data)
+# requirements.txt (we want to keep)
+# README.md (we want to keep)
+# process_data.py (code)
+# download_bhavcopy.py (code)
+# download_yahoo_data.py (code)
+# nse_fno_scripts.py (code)
+# utilities.py (code)
+
+# So we need to ignore:
+# /bhavcopy/
+# /earning_dates/
+# /interest_rates/
+# /yahoo_finance/
+# /processed_data/
+# /quality_reports/
+# /output/
+# /nse-options-last-5-years/
+# *.json (except maybe those that are code? but we can ignore all json and then whitelist? simpler: ignore specific json files that are known data)
+# *.csv
+# *.pdf
+
+# But we might want to keep the .json files in the root that are not data? Let's check: there are nse_fno_scripts.json and top_nse_fno_scripts.json in the root, which are data. So we can ignore them.
+
+# Let's create a .gitignore that ignores the data directories and specific known data files.
+
+# We'll start by ignoring the directories:
+
+/bhavcopy/
+/earning_dates/
+/interest_rates/
+/yahoo_finance/
+/processed_data/
+/quality_reports/
+/output/
+/nse-options-last-5-years/
+
+# Ignore specific data files in root:
+nse_fno_scripts.json
+top_nse_fno_scripts.json
+nse_options_formulae.pdf
+
+# Ignore any .csv and .json files in the data directories (already ignored by directory ignores) but also in root if any other appear:
+*.csv
+*.json
+
+# However, we might want to keep requirements.txt (not json/csv) and README.md (not json/csv). So fine.
+
+# Ignore PDFs (except maybe we want to keep the formulae? but it's data from NSE, so ignore)
+*.pdf
+
+# Ignore SQLite and other database files:
+*.sqlite3
+*.db
+
+# Ignore logs:
+*.log
+
+# Ignore IDE:
+.idea/
+.vscode/
+
+# Ignore pyenv:
+.python-version
+
+# Ignore venv:
+.venv/
+env/
+ENV/
+
+# Ignore macOS:
+.DS_Store
+
+# Ignore Thumbs Windows:
+Thumbs.db
+
+# Ignore __pycache__ already covered by general python rules above? We'll add:
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore distribution:
+build/
+dist/
+*.egg-info/
+# Ignore all .txt and .md files except README.md and LICENSE.md
+*.txt
+*.md
+!README.md
+!LICENSE.md
