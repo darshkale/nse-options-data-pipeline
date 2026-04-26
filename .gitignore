@@ -335,3 +335,9 @@ dist/
 !README.md
 !LICENSE.md
 !CONTRIBUTING.md
+
+# Exceptions
+!data/sample_data.csv
+
+# Allow markdown files in docs
+!docs/*.md

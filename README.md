@@ -97,11 +97,18 @@ See `notebooks/demo_iron_condor.ipynb` for a complete end‑to‑end example:
 > The full 5‑year cleaned dataset is required to reproduce the strategy output above.  
 > Full dataset and API access are available on request.
 
-## Data Access Section (Monetization Hook)
-📩 Want full dataset + API access?
+## 🚀 Get Full Access
 
-→ Email: [yogesh@afi.edu.in](mailto:yogesh@afi.edu.in)
-→ Subject: "NIFTY Data Access"
+Unlock:
+
+* 5+ years clean NIFTY options dataset
+* IV + Greeks (100% coverage)
+* execution modeling (bid-ask + slippage)
+* strategy-ready data (tradability filters)
+* API access (fast queries)
+
+📩 Email: [yogesh@afi.edu.in](mailto:yogesh@afi.edu.in)
+Subject: "NIFTY Options Data Access"
 
 ## Documentation
 - `docs/architecture.md` – detailed pipeline description, IV/Greeks calculations, execution modeling, API design
